@@ -20,6 +20,7 @@ class GlobalConfig(BaseConfig):
 class DevConfig(GlobalConfig):
     model_config = SettingsConfigDict(env_prefix="DEV_")
 
+    DATABASE_URL: str
     MOVIEDB_BEARER: str
     SECRET_KEY: str
     ALGORITHM: str
@@ -34,6 +35,8 @@ class TestConfig(GlobalConfig):
 
     DATABASE_URL: str = "sqlite:///./test.db"
     DB_FORCE_ROLL_BACK: bool = True
+    SECRET_KEY: str = "test_secret"
+    ALGORITHM: str = "HS256"
 
 
 @lru_cache()

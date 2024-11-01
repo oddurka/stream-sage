@@ -20,7 +20,7 @@ async def test_register_user_already_exists(
         async_client, registered_user["email"], registered_user["password"]
     )
     assert response.status_code == 400
-    assert "Already registered" in response.json()["detail"]
+    assert "A user with that email already exists" in response.json()["detail"]
 
 @pytest.mark.anyio
 async def test_login_user_not_exists(async_client: AsyncClient):

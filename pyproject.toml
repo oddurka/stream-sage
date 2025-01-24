@@ -4,6 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["Árnason, Oddur <oddur.arnason@kpn.com>"]
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -21,6 +22,7 @@ requests = "^2.32.3"
 python-jose = "^3.3.0"
 python-multipart = "^0.0.13"
 passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+icecream = "^2.1.4"
 
 
 [build-system]

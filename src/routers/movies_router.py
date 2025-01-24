@@ -1,7 +1,8 @@
-
 import logging
+from typing import List
 from fastapi import APIRouter
-from src.services import movie_service
+from src.models.movie import Movie
+from src.services.movie_service import MovieService
 
 
 router = APIRouter()
@@ -9,6 +10,11 @@ router = APIRouter()
 logger = logging.getLogger(__name__)
 
 @router.get("/popular")
-async def get_popular():
-    return movie_service.get_popular_movies()
+async def get_popular() -> List[Movie]:
+    service = MovieService()
+    return service.get_popular_movies()
 
+@router.get("/search")
+async def search_movie(movie_title: str) -> dict:
+    service = MovieService()
+    return service.search_movie(movie_title)

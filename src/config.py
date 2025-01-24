@@ -37,6 +37,7 @@ class TestConfig(GlobalConfig):
     DB_FORCE_ROLL_BACK: bool = True
     SECRET_KEY: str = "test_secret"
     ALGORITHM: str = "HS256"
+    MOVIEDB_BEARER: str = "test_bearer"
 
 
 @lru_cache()

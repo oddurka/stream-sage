@@ -15,6 +15,6 @@ async def get_popular() -> List[Movie]:
     return service.get_popular_movies()
 
 @router.get("/search")
-async def search_movie(movie_title: str) -> dict:
+async def search_movie(movie_title: str) -> List[Movie]:
     service = MovieService()
     return service.search_movie(movie_title)
